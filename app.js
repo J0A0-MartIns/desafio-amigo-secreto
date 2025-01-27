@@ -24,7 +24,7 @@ function exibirTextoNaTela(tag, texto) {
 }
 
 function sortearAmigo() {
-  let sorteio = nomeAmigo[parseInt(Math.random() * nomeAmigo.length + 1)];
+  let sorteio = nomeAmigo[parseInt(Math.random() * nomeAmigo.length)];
   exibirTextoNaTela("h2", "Você saiu com:");
   exibirTextoNaTela("p", sorteio);
 }
