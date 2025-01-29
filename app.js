@@ -8,6 +8,7 @@ function adicionarAmigo() {
   atualizarListaDeAmigos(nomeInformado);
 }
 
+//Verifica se o nome informado já existe na lista e inseri caso não exista.
 function atualizarListaDeAmigos(nomeInformado) {
   if (nomeAmigo.includes(nomeInformado)) {
     alert("Nome já inserido.");
@@ -23,6 +24,7 @@ function exibirTextoNaTela(tag, texto) {
   campo.innerHTML = texto;
 }
 
+//Seleciona de forma randomica o nome referente ao índice que o mesmo ocupa de acordo com o tamanho do array.
 function sortearAmigo() {
   let sorteio = nomeAmigo[parseInt(Math.random() * nomeAmigo.length)];
   exibirTextoNaTela("h2", "Você saiu com:");
