@@ -10,13 +10,24 @@ function adicionarAmigo() {
 
 //Verifica se o nome informado já existe na lista e inseri caso não exista.
 function atualizarListaDeAmigos(nomeInformado) {
-  if (nomeAmigo.includes(nomeInformado)) {
-    alert("Nome já inserido.");
+  if (nomeAmigo.includes(nomeInformado) || nomeInformado == "") {
+    alert("Nome já inserido ou valor inválido.");
   } else {
     nomeAmigo.push(nomeInformado);
-    alert(nomeInformado + " adicionado com sucesso!");
+    atualizarExibicaoLista()
     console.log(nomeAmigo);
+    
   }
+}
+
+function atualizarExibicaoLista(){
+  let lista = document.getElementById("listaAmigos");  lista.innerHTML = "";
+
+  nomeAmigo.forEach((nome) => {
+    let item = document.createElement("li");
+    item.textContent = nome;
+    lista.appendChild(item);
+  });
 }
 
 function exibirTextoNaTela(tag, texto) {
